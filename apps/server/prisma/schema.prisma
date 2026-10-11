@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model GuestSave {
+  guestId   String   @id
+  nickname  String
+  coins     Int
+  seeds     Json
+  inventory Json
+  plots     Json
+  x         Float
+  y         Float
+  updatedAt DateTime @updatedAt
+}
